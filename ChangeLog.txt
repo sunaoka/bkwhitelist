@@ -1,0 +1,4 @@
+2007-04-29  SUNAOKA Norifumi  <sunaoka@pocari.org>
+
+	* version 1.0.0:
+	ライセンスを修正 BSD ライセンスにてリリース
