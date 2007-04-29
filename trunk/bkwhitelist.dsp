@@ -159,5 +159,13 @@ SOURCE=.\SetupDlg.h
 SOURCE=.\mailbox.ico
 # End Source File
 # End Group
+# Begin Source File
+
+SOURCE=.\bkwhitelist.txt
+# End Source File
+# Begin Source File
+
+SOURCE=.\ChangeLog.txt
+# End Source File
 # End Target
 # End Project
