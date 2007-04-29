@@ -167,5 +167,17 @@ SOURCE=.\bkwhitelist.txt
 
 SOURCE=.\ChangeLog.txt
 # End Source File
+# Begin Source File
+
+SOURCE=.\setup01.png
+# End Source File
+# Begin Source File
+
+SOURCE=.\setup02.png
+# End Source File
+# Begin Source File
+
+SOURCE=.\setup03.png
+# End Source File
 # End Target
 # End Project
