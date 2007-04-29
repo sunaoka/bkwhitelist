@@ -1,0 +1,180 @@
+//Microsoft Developer Studio generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "afxres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// 日本語 resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_JPN)
+#ifdef _WIN32
+LANGUAGE LANG_JAPANESE, SUBLANG_DEFAULT
+#pragma code_page(932)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_SETUP DIALOG DISCARDABLE  0, 0, 263, 195
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Becky! White list plug-in"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "利用するメールボックス (&M):",IDC_STATIC,18,34,83,8
+    CONTROL         "List1",IDC_LIST_MAILBOX,"SysListView32",LVS_REPORT | 
+                    LVS_NOCOLUMNHEADER | WS_BORDER | WS_TABSTOP,18,45,228,94
+    PUSHBUTTON      "プロパティ(&P)",IDC_PROPERTY,180,146,66,14
+    DEFPUSHBUTTON   "OK",IDOK,153,177,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,209,177,50,14
+    CONTROL         "Tab2",IDC_TAB,"SysTabControl32",0x0,4,4,255,168
+END
+
+IDD_PROPERTY DIALOG DISCARDABLE  0, 0, 214, 173
+STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "プロパティ"
+FONT 9, "ＭＳ Ｐゴシック"
+BEGIN
+    LTEXT           "ホワイトリスト (メールアドレス) (&M): 改行で区切ってください。",
+                    IDC_STATIC,5,5,176,8
+    EDITTEXT        IDC_EDIT_EMAIL,5,16,204,132,ES_MULTILINE | ES_WANTRETURN | 
+                    WS_VSCROLL
+    PUSHBUTTON      "OK",IDOK,101,154,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,159,154,50,14
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO DISCARDABLE 
+BEGIN
+    IDD_SETUP, DIALOG
+    BEGIN
+        LEFTMARGIN, 4
+        RIGHTMARGIN, 259
+        TOPMARGIN, 4
+        BOTTOMMARGIN, 191
+        HORZGUIDE, 172
+    END
+
+    IDD_PROPERTY, DIALOG
+    BEGIN
+        LEFTMARGIN, 5
+        RIGHTMARGIN, 209
+        TOPMARGIN, 5
+        BOTTOMMARGIN, 168
+        HORZGUIDE, 148
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "#include ""afxres.h""\r\n"
+    "\0"
+END
+
+3 TEXTINCLUDE DISCARDABLE 
+BEGIN
+    "\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+
+#ifndef _MAC
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x40004L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "041104b0"
+        BEGIN
+            VALUE "Comments", "\0"
+            VALUE "CompanyName", " \0"
+            VALUE "FileDescription", "指定したメールアドレス以外に送信する際に確認を促すプラグイン\0"
+            VALUE "FileVersion", "1, 0, 0, 0\0"
+            VALUE "InternalName", "bkwhitelist\0"
+            VALUE "LegalCopyright", "Copyright (C) 2007, SUNAOKA Norifumi\0"
+            VALUE "LegalTrademarks", "\0"
+            VALUE "OriginalFilename", "bkwhitelist.dll\0"
+            VALUE "PrivateBuild", "\0"
+            VALUE "ProductName", "bkwhitelist\0"
+            VALUE "ProductVersion", "1, 0, 0, 0\0"
+            VALUE "SpecialBuild", "\0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x411, 1200
+    END
+END
+
+#endif    // !_MAC
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDI_MAILBOX             ICON    DISCARDABLE     "mailbox.ico"
+#endif    // 日本語 resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+
+
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+
