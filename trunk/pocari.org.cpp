@@ -28,6 +28,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ***********************************************************************/
 
+#pragma warning (disable: 4786) // ÃÞÊÞ¯¸Þî•ñ‚ÅŽ¯•ÊŽq‚ª 255 •¶Žš‚ÉØ‚èŽÌ‚Ä‚ç‚ê‚Ü‚µ‚½B
+
 #include "pocari.org.h"
 
 /************************************************************************
