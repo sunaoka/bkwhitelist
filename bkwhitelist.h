@@ -39,6 +39,12 @@ typedef std::map<std::string, std::string> THash;
 typedef std::map<std::string, TSet> TMailBox;
 
 //
+BOOL wildmatch(LPCSTR, LPCSTR);
+
+//
+LRESULT CALLBACK MsgBoxHookProc(int, WPARAM, LPARAM);
+
+//
 TSet EnumReptEMail(HWND);
 void GetReptEMail(HWND, TSet&, LPCSTR);
 

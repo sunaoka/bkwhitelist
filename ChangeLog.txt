@@ -1,3 +1,18 @@
+2007-10-13  SUNAOKA Norifumi  <sunaoka@pocari.org>
+
+	* version 1.1.0:
+	ホワイトリストのメールアドレスにワイルドカードが使えるようにする
+
+	* bkwhitelist.rc:
+	ワイルドカードが使える説明の追加
+	レイアウトの変更
+
+	* bkwhitelist.cpp: BKC_OnOutgoing
+	ワイルドカードによるマッチングを行なう
+
+	* bkwhitelist.cpp, bkwhitelist.h: wildmatch
+	ワイルドカードによるマッチングを行なう関数を追加
+
 2007-04-29  SUNAOKA Norifumi  <sunaoka@pocari.org>
 
 	* version 1.0.0:

@@ -61,6 +61,34 @@ char szIni[_MAX_PATH+2]; // Ini file to save your plugin settings.
 TMailBox g_mailbox;
 
 /////////////////////////////////////////////////////////////////////////////
+// ワイルドカードによるマッチングを行なう
+BOOL wildmatch(LPCSTR pattern, LPCSTR str)
+{
+	while (*str) {
+		switch (*pattern) {
+		case '?':
+			if (*str == '.') {
+				return FALSE;
+			}
+			break;
+		case '*':
+			return !*(pattern + 1) || wildmatch(pattern + 1, str) || wildmatch(pattern, str + 1);
+		default:
+			if (*str != *pattern) {
+				return FALSE;
+			}
+			break;
+		}
+		++str;
+		++pattern;
+	}
+	while (*pattern == '*') {
+		++pattern;
+	}
+	return !*pattern;
+}
+
+/////////////////////////////////////////////////////////////////////////////
 // MessageBox をフックする
 HHOOK hook;
 
@@ -299,7 +327,7 @@ int WINAPI BKC_OnOutgoing(HWND hWnd, int nMode/* 0:SaveToOutbox, 1:SaveToDraft, 
 	TSet blachlistEMails = EMails;
 	for (TSet::iterator whiteAddr = g_mailbox[CurrentMailBox].begin(); whiteAddr != g_mailbox[CurrentMailBox].end(); ++whiteAddr) {
 		for (TSet::iterator rcptAddr = EMails.begin(); rcptAddr != EMails.end(); ++rcptAddr) {
-			if (*whiteAddr == *rcptAddr) {
+			if (wildmatch((*whiteAddr).c_str(), (*rcptAddr).c_str())) {
 				blachlistEMails.erase(*rcptAddr);
 			}
 		}
@@ -411,7 +439,7 @@ int WINAPI BKC_OnPlugInInfo(LPBKPLUGININFO lpPlugInInfo)
 	   otherwise Becky! will silently ignore your plug-in. */
 	strcpy(lpPlugInInfo->szPlugInName, PLUGIN_NAME);
 	strcpy(lpPlugInInfo->szVendor, "SUNAOKA, Norifumi");
-	strcpy(lpPlugInInfo->szVersion, "1.0.0");
+	strcpy(lpPlugInInfo->szVersion, "1.1.0");
 	strcpy(lpPlugInInfo->szDescription, "指定したメールアドレス以外に送信する際に確認を促すプラグイン");
 
 	// Always return 0.
