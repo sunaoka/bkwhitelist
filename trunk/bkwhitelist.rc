@@ -40,17 +40,21 @@ BEGIN
     CONTROL         "Tab2",IDC_TAB,"SysTabControl32",0x0,4,4,255,168
 END
 
-IDD_PROPERTY DIALOG DISCARDABLE  0, 0, 214, 173
+IDD_PROPERTY DIALOG DISCARDABLE  0, 0, 215, 197
 STYLE DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
 CAPTION "プロパティ"
 FONT 9, "ＭＳ Ｐゴシック"
 BEGIN
-    LTEXT           "ホワイトリスト (メールアドレス) (&M): 改行で区切ってください。",
-                    IDC_STATIC,5,5,176,8
-    EDITTEXT        IDC_EDIT_EMAIL,5,16,204,132,ES_MULTILINE | ES_WANTRETURN | 
+    LTEXT           "ホワイトリスト (メールアドレス) (&M):",IDC_STATIC,5,5,
+                    102,8
+    EDITTEXT        IDC_EDIT_EMAIL,5,16,205,132,ES_MULTILINE | ES_WANTRETURN | 
                     WS_VSCROLL
-    PUSHBUTTON      "OK",IDOK,101,154,50,14
-    PUSHBUTTON      "キャンセル",IDCANCEL,159,154,50,14
+    PUSHBUTTON      "OK",IDOK,101,178,50,14
+    PUSHBUTTON      "キャンセル",IDCANCEL,160,178,50,14
+    LTEXT           "* 複数のメールアドレスを記述するときは、改行で区切ってください。",
+                    IDC_STATIC,5,153,195,8
+    LTEXT           "* ワイルドカード (*, ?) が使用できます。",IDC_STATIC,5,
+                    165,116,8
 END
 
 
@@ -74,10 +78,11 @@ BEGIN
     IDD_PROPERTY, DIALOG
     BEGIN
         LEFTMARGIN, 5
-        RIGHTMARGIN, 209
+        RIGHTMARGIN, 210
         TOPMARGIN, 5
-        BOTTOMMARGIN, 168
+        BOTTOMMARGIN, 192
         HORZGUIDE, 148
+        HORZGUIDE, 153
     END
 END
 #endif    // APSTUDIO_INVOKED
