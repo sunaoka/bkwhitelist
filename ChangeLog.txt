@@ -1,4 +1,21 @@
-2007-10-13  SUNAOKA Norifumi  <sunaoka@pocari.org>
+2007-11-18  SUNAOKA Norifumi  <sunaoka [at] gmail.com>
+
+	* version 1.1.1:
+	リリース
+
+	* bkwhitelist.txt:
+	シグネチャを追加
+
+	* SetupDlg.cpp, bkwhitelist.cpp, bkwhitelist.h, PropertyDlg.cpp:
+	pocari.org.cpp, pocari.org.h からリネームに伴う処置
+
+	* common.cpp, common.h:
+	pocari.org.cpp, pocari.org.h からリネーム
+
+	* bkwhitelist.cpp:
+	typo の修正
+
+2007-10-13  SUNAOKA Norifumi  <sunaoka [at] gmail.com>
 
 	* version 1.1.0:
 	ホワイトリストのメールアドレスにワイルドカードが使えるようにする
@@ -13,7 +30,7 @@
 	* bkwhitelist.cpp, bkwhitelist.h: wildmatch
 	ワイルドカードによるマッチングを行なう関数を追加
 
-2007-04-29  SUNAOKA Norifumi  <sunaoka@pocari.org>
+2007-04-29  SUNAOKA Norifumi  <sunaoka [at] gmail.com>
 
 	* version 1.0.0:
 	ライセンスを修正 BSD ライセンスにてリリース

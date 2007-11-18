@@ -32,7 +32,7 @@
 #include <vector>
 #include <set>
 #include <map>
-#include "pocari.org.h"
+#include "common.h"
 
 typedef std::set<std::string> TSet;
 typedef std::map<std::string, std::string> THash;

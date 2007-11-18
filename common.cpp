@@ -30,12 +30,12 @@
 
 #pragma warning (disable: 4786) // ÃŞÊŞ¯¸Şî•ñ‚Å¯•Êq‚ª 255 •¶š‚ÉØ‚èÌ‚Ä‚ç‚ê‚Ü‚µ‚½B
 
-#include "pocari.org.h"
+#include "common.h"
 
 /************************************************************************
  * tokenizer
  ***********************************************************************/
-void pocari_org::tokenizer::parse(std::set<std::string>& tokens, const char *text, const char *sepalator)
+void common::tokenizer::parse(std::set<std::string>& tokens, const char *text, const char *sepalator)
 {
 	char *tok;
 	
@@ -46,7 +46,7 @@ void pocari_org::tokenizer::parse(std::set<std::string>& tokens, const char *tex
 	}
 }
 
-void pocari_org::tokenizer::parse(std::vector<std::string>& tokens, const char *text, const char *sepalator)
+void common::tokenizer::parse(std::vector<std::string>& tokens, const char *text, const char *sepalator)
 {
 	char *tok;
 	
@@ -60,7 +60,7 @@ void pocari_org::tokenizer::parse(std::vector<std::string>& tokens, const char *
 /************************************************************************
  * array
  ***********************************************************************/
-std::string pocari_org::array::join(std::set<std::string>& array, std::string sepalator)
+std::string common::array::join(std::set<std::string>& array, std::string sepalator)
 {
 	std::string string;
 
@@ -71,7 +71,7 @@ std::string pocari_org::array::join(std::set<std::string>& array, std::string se
 	return string.substr(0, string.size() - sepalator.size());
 }
 
-std::string pocari_org::array::join(std::vector<std::string>& array, std::string sepalator)
+std::string common::array::join(std::vector<std::string>& array, std::string sepalator)
 {
 	std::string string;
 
