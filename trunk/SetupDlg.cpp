@@ -261,7 +261,7 @@ BOOL OnSetupOK(HWND hWnd)
 	// ini ファイルの MailBoxes セクションをクリア
 	WritePrivateProfileString("MailBoxes", NULL, NULL, szIni);
 
-	pocari_org::array array;
+	common::array array;
 	for (TMailBox::iterator mailbox = g_temporary_mailbox.begin(); mailbox != g_temporary_mailbox.end(); ++mailbox) {
 		// ini ファイルに書き込み
 		WritePrivateProfileString("MailBoxes", ((*mailbox).first).c_str(), (array.join((*mailbox).second, ",")).c_str(), szIni);

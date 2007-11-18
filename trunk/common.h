@@ -28,8 +28,8 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  ***********************************************************************/
 
-#ifndef _POCARI_ORG_H_
-#define _POCARI_ORG_H_
+#ifndef _COMMON_H_
+#define _COMMON_H_
 
 #include <string.h>
 #include <stdio.h>
@@ -37,7 +37,7 @@
 #include <vector>
 #include <set>
 
-namespace pocari_org {
+namespace common {
 
 	class tokenizer
 	{
@@ -54,4 +54,4 @@ namespace pocari_org {
 	};
 }
 
-#endif // _POCARI_ORG_H_
+#endif // _COMMON_H_

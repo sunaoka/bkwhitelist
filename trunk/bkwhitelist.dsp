@@ -112,7 +112,7 @@ SOURCE=.\bkwhitelist.rc
 # End Source File
 # Begin Source File
 
-SOURCE=.\pocari.org.cpp
+SOURCE=.\common.cpp
 # End Source File
 # Begin Source File
 
@@ -140,7 +140,7 @@ SOURCE=.\bkwhitelist.h
 # End Source File
 # Begin Source File
 
-SOURCE=.\pocari.org.h
+SOURCE=.\common.h
 # End Source File
 # Begin Source File
 

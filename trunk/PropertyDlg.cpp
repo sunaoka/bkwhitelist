@@ -48,7 +48,7 @@ extern std::string g_current_mailbox;
 BOOL InitPropertyDialog(HWND hWnd)
 {
 	// メールアドレスを取得し，テキストボックスに入れる
-	pocari_org::array array;
+	common::array array;
 	std::string eMails = array.join(g_temporary_mailbox[g_current_mailbox], "\r\n");
 	if (!eMails.empty()) {
 		eMails.append("\r\n");
@@ -65,7 +65,7 @@ BOOL OnOK(HWND hWnd)
 	GetDlgItemText(hWnd, IDC_EDIT_EMAIL, &buffer[0], buffer.size());
 
 	// メールアドレスを改行で分解
-	pocari_org::tokenizer token;
+	common::tokenizer token;
 	TSet mailAddresses;
 	token.parse(mailAddresses, &buffer[0], "\r\n");
 

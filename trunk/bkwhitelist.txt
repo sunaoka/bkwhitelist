@@ -27,3 +27,7 @@ Becky! Internet Mail をインストールしたフォルダにある PlugIns フォルダ
  ライセンス
 ----------------------------------------------------------------------
 ソースコードのライセンスは，修正 BSD ライセンスです．
+
+-- 
+SUNAOKA, Norifumi <sunaoka [at] gmail.com>
+http://code.google.com/p/bkwhitelist/

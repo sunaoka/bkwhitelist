@@ -126,7 +126,7 @@ void GetSettings()
 		// メールアドレスを取得
 		GetPrivateProfileString("MailBoxes", mailBox.c_str(), "", mailAddress, 32767, szIni);
 		// メールアドレスを分解
-		pocari_org::tokenizer token;
+		common::tokenizer token;
 		// カンマで分割
 		TSet mailAddresses;
 		token.parse(mailAddresses, mailAddress, ",");
@@ -307,7 +307,7 @@ int WINAPI BKC_OnOpenCompose(HWND hWnd, int nMode/* See COMPOSE_MODE_* in BeckyA
 // Called when the composing message is saved.
 int WINAPI BKC_OnOutgoing(HWND hWnd, int nMode/* 0:SaveToOutbox, 1:SaveToDraft, 2:SaveToReminder*/) 
 {
-	pocari_org::array array;
+	common::array array;
 
 	// 直ちに送信と送信箱に保存以外は終了
 	if (nMode != 0) {
@@ -324,23 +324,23 @@ int WINAPI BKC_OnOutgoing(HWND hWnd, int nMode/* 0:SaveToOutbox, 1:SaveToDraft, 
 	TSet EMails = EnumReptEMail(hWnd);
 
 	// メールアドレスのチェック
-	TSet blachlistEMails = EMails;
+	TSet blacklistEMails = EMails;
 	for (TSet::iterator whiteAddr = g_mailbox[CurrentMailBox].begin(); whiteAddr != g_mailbox[CurrentMailBox].end(); ++whiteAddr) {
 		for (TSet::iterator rcptAddr = EMails.begin(); rcptAddr != EMails.end(); ++rcptAddr) {
 			if (wildmatch((*whiteAddr).c_str(), (*rcptAddr).c_str())) {
-				blachlistEMails.erase(*rcptAddr);
+				blacklistEMails.erase(*rcptAddr);
 			}
 		}
 	}	
 	
 	// ホワイトリストにあれば終了
-	if (blachlistEMails.empty()) {
+	if (blacklistEMails.empty()) {
 		return 0;
 	}
 	
 	// 警告のメッセージを表示
 	std::string warnningMessage = "以下のメールアドレスはホワイトリストに設定されていません。\n\n";
-	warnningMessage += array.join(blachlistEMails, "\n");
+	warnningMessage += array.join(blacklistEMails, "\n");
 	warnningMessage += "\n\n本当にメッセージを送信しますか？";
 	
 	hook = SetWindowsHookEx(WH_CBT, MsgBoxHookProc, NULL, GetCurrentThreadId());
@@ -439,7 +439,7 @@ int WINAPI BKC_OnPlugInInfo(LPBKPLUGININFO lpPlugInInfo)
 	   otherwise Becky! will silently ignore your plug-in. */
 	strcpy(lpPlugInInfo->szPlugInName, PLUGIN_NAME);
 	strcpy(lpPlugInInfo->szVendor, "SUNAOKA, Norifumi");
-	strcpy(lpPlugInInfo->szVersion, "1.1.0");
+	strcpy(lpPlugInInfo->szVersion, "1.1.1");
 	strcpy(lpPlugInInfo->szDescription, "指定したメールアドレス以外に送信する際に確認を促すプラグイン");
 
 	// Always return 0.
